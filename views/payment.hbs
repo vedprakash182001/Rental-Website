@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    {{!-- <meta name="viewport" content="width=device-width, initial-scale=1"> --}}
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0"/>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="/statics/css/style.css">
+
+    <title>Document</title>
+  </head>
+  <body>
+    {{>navbar}}
+
+
+    <section class="user_detail mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="text-center mb-2">Complete Order Details</h5>
+                            <div class="summary">
+                                <p class="me-1">Name : {{detail.username}}</p>
+                            </div>
+                            <div class="summary">
+                                <p class="me-1">Product name : </p>
+                                <p id="product_name">user1</p>
+                            </div>
+                            <div class="summary">
+                                <p class="me-1">Price : </p>
+                                <p id="price">user1</p>
+                            </div>
+                            <div class="summary">
+                                <p class="me-1">Email : {{detail.useremail}}</p>
+                            </div>
+                            <div class="summary">
+                                <p class="me-1">Phone Number : {{detail.usernumber}}</p>
+                            </div>
+                            <div class="summary">
+                                <p class="me-1">date : </p>
+                                <p id="date">dhfhd</p>
+                            </div>
+                            <div class="summary">
+                                <p class="me-1">Order id : </p>
+                                <p id="order_id">user1</p>
+                            </div>
+                            <div class="summary">
+                                <p class="me-1">Address : {{detail.useraddress}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-5">
+                    <div class="card">
+                        <div class="card-body payment_box">
+                            <h3>Welcome to Payment Gateway</h3>
+                            <form action="cash" method="post">
+                                <div class="userdata" style="display: none;" >
+                                    <input type="text" name="username" value="{{detail.username}}" >
+                                    <input type="text" name="useremail" value="{{detail.useremail}}" >
+                                    <input type="number" name="usernumber" value="{{detail.usernumber}}" >
+                                    <input type="text" name="useraddress" value="{{detail.useraddress}}" >
+                                    <input type="text" name="price" value="" id="price1" >
+                                    <input type="text" name="productname" value="" id="product_name1" >
+                                    <input type="text" name="orderid" value="" id="orderid1" >
+                                    <input type="text" name="date" value="" id="date1" >
+                                </div>
+                                <button type="submit" class="btn btn-primary">Cash on Delivery</button>
+                            </form>
+                            <form action="payment" method="POST">
+                                {{!-- <script
+                                src="//checkout.stripe.com/v2/checkout.js"
+                                class="stripe-button"
+                                data-key="<%= key %>"
+                                data-amount="7000"
+                                data-currency="usd"
+                                data-name="Gautam Sharma"
+                                data-description="Buy React.js Complete Course"
+                                data-locale="auto" >
+                                </script> --}}
+                                <div class="userdata" style="display: none;" >
+                                    <input type="text" name="username" value="{{detail.username}}" >
+                                    <input type="text" name="useremail" value="{{detail.useremail}}" >
+                                    <input type="number" name="usernumber" value="{{detail.usernumber}}" >
+                                    <input type="text" name="useraddress" value="{{detail.useraddress}}" >
+                                    <input type="text" name="price" value="" id="price2" >
+                                    <input type="text" name="productname" value="" id="product_name2" >
+                                    <input type="text" name="orderid" value="" id="orderid2" >
+                                    <input type="text" name="date" value="" id="date2" >
+                                </div>
+                                <button type="submit" class="btn" >Payment</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script>
+        let tempname = localStorage.getItem("nameing");
+        name = JSON.parse(tempname);
+        document.getElementById('product_name').innerHTML = name;
+        document.getElementById('product_name1').value = name;
+        document.getElementById('product_name2').value = name;
+
+        let tempcost = localStorage.getItem("costing");
+        cost = JSON.parse(tempcost);
+        document.getElementById('price').innerHTML = cost;
+        document.getElementById('price1').value = cost;
+        document.getElementById('price2').value = cost;
+
+        let temporderid = localStorage.getItem("oderiding");
+        orderid = JSON.parse(temporderid);
+        document.getElementById('order_id').innerHTML = orderid;
+        document.getElementById('orderid1').value = orderid;
+        document.getElementById('orderid2').value = orderid;
+
+        const date = new Date();
+        const str = date.getDate()+"/"+(date.getMonth()+1)+"/"+date.getFullYear();
+        document.getElementById('date').innerHTML = str;
+        document.getElementById('date1').value = str;
+        document.getElementById('date2').value = str;
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="/statics/js/script.js"></script>
+  </body>
+</html>

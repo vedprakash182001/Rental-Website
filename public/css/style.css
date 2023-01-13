@@ -1,0 +1,20 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.product_rs{
+    display: flex;
+    align-items: center;
+}
+.product_img{
+    border-radius: 5px;
+    height: 160px;
+    margin-bottom: 10px;
+}
+.summary{
+    display: flex;
+}
+.payment_box{
+    /* background-color: red; */
+    height: 300px;
+}
