@@ -11,39 +11,43 @@
 
     <title>Document</title>
   </head>
-  <body>
+  <body class="background1" >
     {{>navbar}}
 
 
     <section class="user_detail mt-5">
         <div class="container">
             <div class="row">
-                <div class="col-md-5">
-                    <div class="card">
+                <div class="col-md-5 ">
+                    <div class="card order-summary ">
                         <div class="card-body">
                             <h5 class="text-center mb-2">Order Summary Section</h5>
+                            <hr>
                             <div class="summary">
                                 <p class="me-1">Product Name : </p>
-                                <p id="product_name">dhfhd</p>
+                                <p id="product_name" class="ms-auto">dhfhd</p>
                             </div>
+                            <hr>
                             <div class="summary">
                                 <p class="me-1">Price : </p>
-                                <p id="price">user1</p>
+                                <p id="price"class="ms-auto">user1</p>
                             </div>
+                            <hr>
                             <div class="summary">
                                 <p class="me-1">Order id : </p>
-                                <p id="order_id">user1</p>
+                                <p id="order_id"class="ms-auto">user1</p>
                             </div>
+                            <hr>
                             <div class="summary">
                                 <p class="me-1">date : </p>
-                                <p id="date">dhfhd</p>
+                                <p id="date"class="ms-auto">dhfhd</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-5">
-                    <div class="card">
+                    <div class="card order-summary">
                         <div class="card-body">
                              <form action="/make_payment" method="post" >
                                 <div class="mb-3">
@@ -69,7 +73,7 @@
                                     </div>
                                 {{/if}}
                                 <div class="container text-center">
-                                    <button type="submit" class="btn btn-primary">Make Payment</button>
+                                    <button type="submit" class="btn btn-primary">Proceed for Payment</button>
                                 </div>
                             </form>
                         </div>
@@ -78,6 +82,8 @@
             </div>
         </div>
     </section>
+
+    {{>footer}}
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script>

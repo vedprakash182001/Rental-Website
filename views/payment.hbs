@@ -11,7 +11,7 @@
 
     <title>Document</title>
   </head>
-  <body>
+  <body class="background2" >
     {{>navbar}}
 
 
@@ -19,45 +19,51 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-5">
-                    <div class="card">
+                    <div class="card order-summary">
                         <div class="card-body">
                             <h5 class="text-center mb-2">Complete Order Details</h5>
+                            <hr>
                             <div class="summary">
-                                <p class="me-1">Name : {{detail.username}}</p>
+                                <p class="me-1">Name </p>
+                                <p class="ms-auto">{{detail.username}}</p>
                             </div>
                             <div class="summary">
-                                <p class="me-1">Product name : </p>
-                                <p id="product_name">user1</p>
+                                <p class="me-1">Product name </p>
+                                <p id="product_name" class="ms-auto">user1</p>
                             </div>
                             <div class="summary">
-                                <p class="me-1">Price : </p>
-                                <p id="price">user1</p>
+                                <p class="me-1">Price</p>
+                                <p id="price" class="ms-auto">user1</p>
                             </div>
                             <div class="summary">
-                                <p class="me-1">Email : {{detail.useremail}}</p>
+                                <p class="me-1">Email </p>
+                                <p class="ms-auto">{{detail.useremail}}</p>
                             </div>
                             <div class="summary">
-                                <p class="me-1">Phone Number : {{detail.usernumber}}</p>
+                                <p class="me-1">Phone Number </p>
+                                <p class="ms-auto">{{detail.usernumber}}</p>
                             </div>
                             <div class="summary">
-                                <p class="me-1">date : </p>
-                                <p id="date">dhfhd</p>
+                                <p class="me-1">date </p>
+                                <p id="date"class="ms-auto">dhfhd</p>
                             </div>
                             <div class="summary">
-                                <p class="me-1">Order id : </p>
-                                <p id="order_id">user1</p>
+                                <p class="me-1">Order id </p>
+                                <p id="order_id" class="ms-auto" >user1</p>
                             </div>
                             <div class="summary">
-                                <p class="me-1">Address : {{detail.useraddress}}</p>
+                                <p class="me-1">Address </p>
+                                <p class="ms-auto" >{{detail.useraddress}}</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-5">
-                    <div class="card">
+                    <div class="card order-summary">
                         <div class="card-body payment_box">
                             <h3>Welcome to Payment Gateway</h3>
+                            <hr>
                             <form action="cash" method="post">
                                 <div class="userdata" style="display: none;" >
                                     <input type="text" name="username" value="{{detail.username}}" >
@@ -69,19 +75,12 @@
                                     <input type="text" name="orderid" value="" id="orderid1" >
                                     <input type="text" name="date" value="" id="date1" >
                                 </div>
-                                <button type="submit" class="btn btn-primary ms-3 mb-5">Cash on Delivery</button>
+                                <div class="mid-button">
+                                    <button type="submit" class="btn btn-primary my-5">Cash on Delivery</button>
+                                </div>
                             </form>
                             <form action="payment" method="POST">
-                                {{!-- <script
-                                src="//checkout.stripe.com/v2/checkout.js"
-                                class="stripe-button"
-                                data-key="<%= key %>"
-                                data-amount="7000"
-                                data-currency="usd"
-                                data-name="Gautam Sharma"
-                                data-description="Buy React.js Complete Course"
-                                data-locale="auto" >
-                                </script> --}}
+                            
                                 <div class="userdata" style="display: none;" >
                                     <input type="text" name="username" value="{{detail.username}}" >
                                     <input type="text" name="useremail" value="{{detail.useremail}}" >
@@ -92,7 +91,10 @@
                                     <input type="text" name="orderid" value="" id="orderid2" >
                                     <input type="text" name="date" value="" id="date2" >
                                 </div>
-                                <button type="submit" class="btn btn-primary ms-3" >Payment</button>
+                                <div class="mid-button">
+                                    <button type="submit" class="btn btn-primary" onclick="func2()" >Online Payment</button>
+                                </div>
+                                
                             </form>
                         </div>
                     </div>
@@ -102,7 +104,7 @@
     </section>
 
 
-
+    {{>footer}}
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script>
         let tempname = localStorage.getItem("nameing");

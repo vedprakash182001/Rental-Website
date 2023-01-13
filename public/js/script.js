@@ -12,3 +12,7 @@ function func1(a){
     const order_di1 = JSON.stringify(order_id);
     localStorage.setItem("oderiding",order_di1 );
 }
+
+function func3(){
+  console.log("dnfjdsk");
+}
