@@ -6,7 +6,7 @@ const port = process.env.PORT|4500
 const bodyParse = require("body-parser")
 const hbs = require("hbs")
 
-require("./model/databas");
+// require("./model/databas");
 const Order = require("./model/order");
 
 app.use("/statics",express.static("public"))
@@ -68,17 +68,17 @@ app.post("/payment", async (req, res) => {
 
 app.get("/success",async(req,res)=>{
     try {
-        const data = await Order.create({
-            username:username1,
-            productname:productname1,
-            price:price1,
-            useremail:useremail1,
-            phonenumber:phonenumber1,
-            date:date1,
-            orderid:orderid1,
-            Address:Address1
-        })
-        data.save();
+        // const data = await Order.create({
+        //     username:username1,
+        //     productname:productname1,
+        //     price:price1,
+        //     useremail:useremail1,
+        //     phonenumber:phonenumber1,
+        //     date:date1,
+        //     orderid:orderid1,
+        //     Address:Address1
+        // })
+        // data.save();
         res.render("success");
     } catch (err) {
         res.send(err)
@@ -101,17 +101,17 @@ app.get("/user_detail",(req,res)=>{
 
 app.post("/cash",async(req,res)=>{
     try {
-        const data = await Order.create({
-            username:req.body.username,
-            productname:req.body.productname,
-            price:req.body.price,
-            useremail:req.body.useremail,
-            phonenumber:req.body.usernumber,
-            date:req.body.date,
-            orderid:req.body.orderid,
-            Address:req.body.Address
-        })
-        data.save();
+        // const data = await Order.create({
+        //     username:req.body.username,
+        //     productname:req.body.productname,
+        //     price:req.body.price,
+        //     useremail:req.body.useremail,
+        //     phonenumber:req.body.usernumber,
+        //     date:req.body.date,
+        //     orderid:req.body.orderid,
+        //     Address:req.body.Address
+        // })
+        // data.save();
         res.render("success");
     } catch (err) {
         res.send(err)
