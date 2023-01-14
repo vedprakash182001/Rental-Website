@@ -2,12 +2,9 @@ require("dotenv").config()
 
 const express = require("express");
 const app = express();
-const port = process.env.PORT|4000
+const port = process.env.PORT|4500
 const bodyParse = require("body-parser")
 const hbs = require("hbs")
-const open = require('open');
-const axios = require('axios')
-
 
 require("./model/databas");
 const Order = require("./model/order");
@@ -34,10 +31,6 @@ var date1=""
 var orderid1=""
 var Address1=""
 
-
-
-  
-console.log(process.env.STRIPE_PRIVATE_KEY)
 app.post("/payment", async (req, res) => {
     try {
         username1 = req.body.username
