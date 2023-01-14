@@ -2,7 +2,7 @@ require("dotenv").config()
 
 const express = require("express");
 const app = express();
-const port = process.env.PORT|8000
+const port = process.env.PORT|4000
 const bodyParse = require("body-parser")
 const hbs = require("hbs")
 const open = require('open');
