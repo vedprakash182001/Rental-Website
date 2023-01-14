@@ -1,6 +1,7 @@
 const mongoose = require("mongoose")
-const db = "mongodb://localhost:27017/project4"
-mongoose.connect("mongodb://localhost:27017/project4",{
+const dbjjj = "mongodb://localhost:27017/project4"
+const db = "mongodb+srv://dbuser:eH5zEwOPtE0GLSiB@cluster0.o3dlyhi.mongodb.net/internproject?retryWrites=true&w=majority"
+mongoose.connect(db,{
     useNewUrlParser :true,
 }).then(()=>{
     console.log("Connection Successfull")
